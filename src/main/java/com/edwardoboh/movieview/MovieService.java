@@ -4,13 +4,15 @@ import com.edwardoboh.movieview.models.Movies;
 import com.edwardoboh.movieview.repositories.MoviesRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MovieService {
     @Autowired
-    MoviesRepository moviesRepository;
+    private MoviesRepository moviesRepository;
 
     public List<Movies> getAllMovies() {
         return moviesRepository.findAll();
